@@ -6,11 +6,11 @@ Origami is an open-source research tool focused on graphical representations of 
 
 ## Download
 
-| [<img src="images/linux.png" width="50px"/>](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-linux-x64.zip) | [<img src="images/macos.png" width="50px"/>](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-darwin-x64.zip) | [<img src="images/windows.png" width="50px"/>](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-win32-x64.zip) |
+| [<img src="images/linux.png" width="50px"/>](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-linux-x64.zip) | [<img src="images/macos.png" width="50px"/>](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-darwin-x64.zip) | [<img src="images/windows.png" width="50px"/>](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-win32-x64.zip) |
 | ------------------------------------ | ------------------------------------ | ---------------------------------------|
-| [Download for Linux](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-linux-x64.zip) | [Download for macOS](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-darwin-x64.zip) | [Download for Windows](https://github.com/aMarcireau/origami/releases/download/v0.10.1/Origami-win32-x64.zip) |
+| [Download for Linux](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-linux-x64.zip) | [Download for macOS](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-darwin-x64.zip) | [Download for Windows](https://github.com/chiptuned/origami/releases/download/v0.10.1/Origami-win32-x64.zip) |
 
-Visit the [Releases](https://github.com/aMarcireau/origami/releases) page to download Origami for other platforms.
+Visit the [Releases](https://github.com/chiptuned/origami/releases) page to download Origami for other platforms.
 
 ## Themes
 
@@ -167,7 +167,7 @@ Origami is build with [Electron](https://electronjs.org), [React](https://reactj
 Follow these steps to download the source code, edit and build Origami:
 
 1. Install [Node.js](https://nodejs.org).
-2. Clone the repository by running from a terminal `git clone https://github.com/aMarcireau/origami.git`.
+2. Clone the repository by running from a terminal `git clone https://github.com/chiptuned/origami.git`.
 3. Go to the created *origami* folder and run `npm install`.
 
 For development, run from the *origami* folder the command `npm run-script watch`. It will trigger a development build whenever something from the *souce* directory changes.
@@ -178,7 +178,7 @@ In order to create a new release, run:
 
 To build Windows apps with macOS Catalina, one must patch Wine (see https://github.com/electron/node-rcedit/issues/51#issuecomment-546234084).
 
-The code documentation is held in the [Wiki](https://github.com/aMarcireau/origami/wiki).
+The code documentation is held in the [Wiki](https://github.com/chiptuned/origami/wiki).
 
 ## License
 

@@ -88,7 +88,7 @@ usernameInterface.question('username: ', username => {
         passwordInterface.close();
         process.stdout.write('\n');
         request.post({
-            url: 'https://api.github.com/repos/amarcireau/origami/releases',
+            url: 'https://api.github.com/repos/chiptuned/origami/releases',
             auth: {
                 user: username,
                 pass: password,
@@ -102,17 +102,17 @@ usernameInterface.question('username: ', username => {
             },
         }, (error, httpIncomingMessage, body) => {
             if (error) {
-                console.error('https://api.github.com/repos/amarcireau/origami/releases', error);
+                console.error('https://api.github.com/repos/chiptuned/origami/releases', error);
                 process.exit(1);
             }
             if (httpIncomingMessage.statusCode !== 201) {
-                console.error('https://api.github.com/repos/amarcireau/origami/releases', body);
+                console.error('https://api.github.com/repos/chiptuned/origami/releases', body);
                 process.exit(1);
             }
             const id = body.id;
             console.log(`Created the release v${versionAsString} (id: ${id})`);
             request.get({
-                url: `https://api.github.com/repos/amarcireau/origami/releases/${id}`,
+                url: `https://api.github.com/repos/chiptuned/origami/releases/${id}`,
                 auth: {
                     user: username,
                     pass: password,
@@ -122,11 +122,11 @@ usernameInterface.question('username: ', username => {
                 json: true,
             }, (error, httpIncomingMessage, body) => {
                 if (error) {
-                    console.error(`https://api.github.com/repos/amarcireau/origami/releases/${id}`, error);
+                    console.error(`https://api.github.com/repos/chiptuned/origami/releases/${id}`, error);
                     process.exit(1);
                 }
                 if (httpIncomingMessage.statusCode !== 200) {
-                    console.error(`https://api.github.com/repos/amarcireau/origami/releases/${id}`, body);
+                    console.error(`https://api.github.com/repos/chiptuned/origami/releases/${id}`, body);
                     process.exit(1);
                 }
                 try {
@@ -172,7 +172,7 @@ usernameInterface.question('username: ', username => {
                                         --directoriesLeft;
                                         if (directoriesLeft === 0 && version.identifier == null) {
                                             request.get({
-                                                url: 'https://api.github.com/repos/amarcireau/origami/releases',
+                                                url: 'https://api.github.com/repos/chiptuned/origami/releases',
                                                 auth: {
                                                     user: username,
                                                     pass: password,
@@ -182,11 +182,11 @@ usernameInterface.question('username: ', username => {
                                                 json: true,
                                             }, (error, httpIncomingMessage, body) => {
                                                 if (error) {
-                                                    console.error('https://api.github.com/repos/amarcireau/origami/releases', error);
+                                                    console.error('https://api.github.com/repos/chiptuned/origami/releases', error);
                                                     process.exit(1);
                                                 }
                                                 if (httpIncomingMessage.statusCode !== 200) {
-                                                    console.error('https://api.github.com/repos/amarcireau/origami/releases', body);
+                                                    console.error('https://api.github.com/repos/chiptuned/origami/releases', body);
                                                     process.exit(1);
                                                 }
                                                 const releasesAndVersionsToPurge = [];
@@ -202,7 +202,7 @@ usernameInterface.question('username: ', username => {
                                                             };
                                                             if (release.draft) {
                                                                 request.delete({
-                                                                    url: `https://api.github.com/repos/amarcireau/origami/releases/${release.id}`,
+                                                                    url: `https://api.github.com/repos/chiptuned/origami/releases/${release.id}`,
                                                                     auth: {
                                                                         user: username,
                                                                         pass: password,
@@ -213,14 +213,14 @@ usernameInterface.question('username: ', username => {
                                                                 }, (error, httpIncomingMessage, body) => {
                                                                     if (error) {
                                                                         console.error(
-                                                                            `https://api.github.com/repos/amarcireau/origami/releases/${release.id}`,
+                                                                            `https://api.github.com/repos/chiptuned/origami/releases/${release.id}`,
                                                                             error
                                                                         );
                                                                         process.exit(1);
                                                                     }
                                                                     if (httpIncomingMessage.statusCode !== 204) {
                                                                         console.error(
-                                                                            `https://api.github.com/repos/amarcireau/origami/releases/${release.id}`,
+                                                                            `https://api.github.com/repos/chiptuned/origami/releases/${release.id}`,
                                                                             body
                                                                         );
                                                                         process.exit(1);
@@ -295,7 +295,7 @@ usernameInterface.question('username: ', username => {
                                                     }
                                                     for (const asset of releaseAndVersion.release.assets) {
                                                         request.delete({
-                                                            url: `https://api.github.com/repos/amarcireau/origami/releases/assets/${asset.id}`,
+                                                            url: `https://api.github.com/repos/chiptuned/origami/releases/assets/${asset.id}`,
                                                             auth: {
                                                                 user: username,
                                                                 pass: password,
@@ -306,14 +306,14 @@ usernameInterface.question('username: ', username => {
                                                         }, (error, httpIncomingMessage, body) => {
                                                             if (error) {
                                                                 console.error(
-                                                                    `https://api.github.com/repos/amarcireau/origami/releases/assets/${asset.id}`,
+                                                                    `https://api.github.com/repos/chiptuned/origami/releases/assets/${asset.id}`,
                                                                     error
                                                                 );
                                                                 process.exit(1);
                                                             }
                                                             if (httpIncomingMessage.statusCode !== 204) {
                                                                 console.error(
-                                                                    `https://api.github.com/repos/amarcireau/origami/releases/assets/${asset.id}`,
+                                                                    `https://api.github.com/repos/chiptuned/origami/releases/assets/${asset.id}`,
                                                                     body
                                                                 );
                                                                 process.exit(1);
