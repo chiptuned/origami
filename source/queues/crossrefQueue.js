@@ -83,7 +83,7 @@ const crossrefQueue = queue(
                             if (json.message.items.length === 0) {
                                 store.dispatch(rejectPublicationFromMetadata(
                                     request.title,
-                                    'Corssref returned an empty list'
+                                    'Crossref returned an empty list'
                                 ));
                             } else {
                                 const bestPublicationAndDistance = json.message.items.map((publication, index) => {
@@ -138,6 +138,13 @@ const crossrefQueue = queue(
                             store.dispatch(rejectPublicationFromMetadata(
                                 request.title,
                                 `Parsing failed: ${error.message}`
+                            ));
+                        } else if (error instanceof TypeError) {
+                          //Note : probably not correct as there could be multiple causes
+                            store.dispatch(rejectPublicationFromMetadata(
+                                request.title,
+                                request,
+                                `Publication fetched had no title and cannot be parsed: ${error.message}`
                             ));
                         } else {
                             store.dispatch(crossrefQueue.actions.rejectConnection());
